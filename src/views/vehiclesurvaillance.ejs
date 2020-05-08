@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!-- saved from url=(0026)http://localhost:8000/test -->
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>ANPR</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="strap.css">
+    <script type="text/javascript" src="script.js"></script>
+</head>
+
+<body cz-shortcut-listen="true">
+    <div class="container">
+        <div class="row my-3 mx-auto">
+            <h1 class="heading mx-auto">Automatic Number Plate Recognition</h1>
+        </div>
+        <div class="row">
+            <div class="col col-md-6 my-3">
+                <video class="portrait" width="100%" autoplay loop>
+                    <source src="https://github.com/Jyothis-P/Sived/blob/master/vid/car-road.mp4?raw=true" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <!-- <img class="portrait" src="img/plate.jpg"> -->
+            </div>
+            <div class="col col-md-6 my-3">
+                <video class="portrait" width="100%" autoplay loop>
+                    <source src="https://github.com/Jyothis-P/Sived/blob/master/vid/car-road-2.mp4?raw=true" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <!-- <img class="portrait" src="img/plate.jpg"> -->
+            </div>
+        </div>
+        <div class="row my-3">
+            <div class="col col-md-6 my-3">
+                <img class="portrait" src="img/plate.jpg">
+            </div>
+            <div class="col col-md-6 my-3 pt-2">
+                <div class="inputs mx-auto">
+                    <label class="mx-auto" for="number">Vehicle Registration Number</label>
+                    <input type="text" name="number" id="number" class="text-field my-3">
+                    <button class="btn">Submit</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>

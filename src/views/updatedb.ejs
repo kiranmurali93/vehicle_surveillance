@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/public/css/style.css" rel="stylesheet">
+
+</head>
+<body>
+     <!--Navbar begins-->
+   <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">Vehicle Surveillance</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="/dashboard">Home </a>
+            </li>
+            
+            <li class="nav-item active">
+              <a class="nav-link" href="/updatedb">Update DB <span class="sr-only">(current)</span></a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="/viewreport">View Report <span class="sr-only">(current)</span></a>
+            </li>
+
+            <!--Link to be given later-->
+            <li class="nav-item">
+              <a class="nav-link" href="/vehiclesurvaillance">Vehicle Survaillance <span class="sr-only">(current)</span></a>
+            </li>
+            
+            
+            
+          </ul>
+        </div>
+
+       
+      </nav>
+   </header>
+   <!--Navbar ends-->
+
+   <br>
+   <br>
+   
+   <!--Navbar ends-->
+
+         <!--flash msg start-->
+        <% if(success_msg != ''){ %>
+          <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <%= success_msg %>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <% } %> <% if(error_msg != ''){ %>
+          <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <%= error_msg %>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <% } %> <% if(error != ''){ %>
+          <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <%= error %>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <% } %>
+
+
+        <!--flash msg end-->
+<!--Update section start-->
+   <section class="container-sm">
+    <div class="row mt-5">
+      <div class="col-md-6 m-auto">
+        <div class="card card-body">
+          <h1 class="text-center mb-3">
+            <i class="fas fa-user-plus"></i> Update
+          </h1>
+
+          <form action="/updatedb" method="POST">
+            <div class="form-group">
+              <label for="vehicleNumber">Enter the number</label>
+              <input type="text" class="form-control" id="vehicleNo" name="vehicleNo">
+            </div>
+            
+            <div class="form-group">
+              <label>Select Type</label>
+              <select id = "type" name="type">
+                <option value = "Visitors vehicle">Visitors vehicle</option>
+                <option value = "Regular Police vehicle">Regular Police vehicle</option>
+                <option value = "Police vehicle">Police vehicle</option>
+              </select>
+            </div>
+            
+                    
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+   </section>
+<!--Update section start-->
+
+</body>
+</html>

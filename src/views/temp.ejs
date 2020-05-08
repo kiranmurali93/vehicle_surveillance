@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template ejs</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/public/css/style.css" rel="stylesheet">
+
+</head>
+<body>
+    <h1>
+        this is a template and used for testing
+    </h1>
+
+    <section class="container-sm">
+      <div class="row mt-5">
+        <div class="col-md-6 m-auto">
+          <div class="card card-body">
+           
+  
+            <form action="/updatedb" method="POST">
+              <div class="form-group">
+                <label for="vehicleNumber">Enter the number</label>
+                <input type="text" class="form-control" id="vehicleNo" name="vehicleNo">
+              </div>
+              
+              <div class="form-group">
+                <label>Select Type</label>
+                <select id = "myList">
+                  <option value = "1">Visitors vehicle</option>
+                  <option value = "2">Regular Police vehicle</option>
+                  <option value = "3">Police vehicle</option>
+                </select>
+              </div>
+              
+                      
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+            
+          </div>
+        </div>
+      </div>
+     </section>  
+</body>
+</html>
