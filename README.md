@@ -23,9 +23,20 @@
 - express
 - express-session (session middleware)
 - path
+- mongoos
+- bcrypt
+- mongodb
+- passport
 
 ## Starting the server
+- open the terminal
+- use cd command to direct to the location of the file
+- Enter the command in the terminal
 
     npm start
 
-### public folder cointains the custom css and js
+## Restarting the server
+After starting the server enter the command to restart
+
+    rs
+

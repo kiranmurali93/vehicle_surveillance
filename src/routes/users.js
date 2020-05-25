@@ -8,7 +8,28 @@ const router = express.Router();
 
 // Load User model
 const User = require('../models/User');
+const Login = require('../models/Login');
 const { forwardAuthenticated } = require('../config/auth');
+
+// date
+const currdatetime = new Date();
+
+let hour = currdatetime.getHours();
+hour = (hour < 10 ? '0' : '') + hour;
+
+let min = currdatetime.getMinutes();
+min = (min < 10 ? '0' : '') + min;
+
+let sec = currdatetime.getSeconds();
+sec = (sec < 10 ? '0' : '') + sec;
+
+const year = currdatetime.getFullYear();
+
+let month = currdatetime.getMonth() + 1;
+month = (month < 10 ? '0' : '') + month;
+
+let day = currdatetime.getDate();
+day = (day < 10 ? '0' : '') + day;
 
 
 // Login Page
@@ -21,7 +42,7 @@ router.get('/register', forwardAuthenticated, (req, res) => res.render('register
 router.post('/register', (req, res) => {
   // eslint-disable-next-line object-curly-newline
   const { name, designation, department, username, email, password, password2 } = req.body;
-  console.log(req.body);
+  
   const errors = [];
   // all fields required
   if (!name || !designation || !username || !password || !password2 || !department || !email) {
@@ -92,11 +113,25 @@ router.post('/register', (req, res) => {
 
 // Login
 router.post('/login', (req, res, next) => {
+  const ssn = req.session;
+  ssn.username=req.body.username;
+  if(!ssn.passport){
+    const username=ssn.username;
+    const date = `${year}:${month}:${day}`;
+    const timein =`${hour}:${min}:${sec}`;
+    const newlogin = new Login({
+      username,
+      date,
+      timein
+    });
+    newlogin.save();
+  }
   passport.authenticate('local', {
     successRedirect: '/dashboard',
     failureRedirect: '/login',
     failureFlash: true,
-  })(req, res, next);
+  }
+  )(req, res, next);
 });
 
 // Logout
@@ -105,5 +140,6 @@ router.get('/logout', (req, res) => {
   req.flash('success_msg', 'You are logged out');
   res.redirect('login');
 });
+
 
 module.exports = router;

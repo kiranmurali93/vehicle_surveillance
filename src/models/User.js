@@ -30,29 +30,8 @@ const UserSchema = new mongoose.Schema({
 
 });
 
-// login table
-const loginSchema = new mongoose.Schema({
-  userId: {
-    type: String,
-    required: true,
-  },
-  date: {
-    type: Date,
-    required: true,
-  },
-  timein: {
-    type: String,
-    required: true,
-  },
-  timeout: {
-    type: String,
-    required: true,
-  },
-});
-
-// const login = mongoose.model('login', loginSchema);
 const User = mongoose.model('User', UserSchema);
 
 
 module.exports = User;
-// module.exports = login;
+

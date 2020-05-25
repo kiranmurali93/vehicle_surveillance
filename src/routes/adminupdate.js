@@ -37,14 +37,13 @@ router.post('/updatedb', ensureAuthenticated, (req, res) => {
   // const userId = User.id;
   const date = `${year}:${month}:${day}`;
   const time = `${hour}:${min}:${sec}`;
-  console.log(req.body);
+
   const testvehicle = ({
     vehicleNo,
     type,
     date,
     time,
   });
-  console.log(testvehicle);
   if (!vehicleNo || !date || !time || !type) {
     req.flash(
       'error',
