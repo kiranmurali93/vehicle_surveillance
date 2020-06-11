@@ -24,7 +24,7 @@ let day = currdatetime.getDate();
 day = (day < 10 ? '0' : '') + day;
 
 
-router.post('/', ensureAuthenticated, (req, res) => {
+router.post('/numberplate', ensureAuthenticated, (req, res) => {
     const { vehicleNo } = req.body;
     // const userId = User.id;
     const date = `${year}:${month}:${day}`;
