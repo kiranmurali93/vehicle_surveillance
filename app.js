@@ -56,6 +56,7 @@ const tempRouts = require('./src/routes/temprouts');
 const users = require('./src/routes/users');
 const adminupdate = require('./src/routes/adminupdate');
 const viewreport = require('./src/routes/viewreport');
+const vehicle_entry = require('./src/routes/vehicle_entry_routs');
 
 app.use(morgan('tiny'));
 app.use(express.static(path.join(__dirname, '/public/')));
@@ -78,13 +79,14 @@ app.use('/temp', tempRouts); // for testing
 app.use('/', users); // for login
 app.use('/', adminupdate); // for updating db
 app.use('/', viewreport);// for report
+app.use('/', vehicle_entry);// for vehicle entry
 
 // Dashboard
 app.get('/dashboard', ensureAuthenticated, (req, res) => res.render('dashboard', {
   user: req.user,
 }));
 
-app.get('/vehiclesurvaillance', ensureAuthenticated, (req, res) => res.render('vehiclesurvaillance', {
+app.get('http://localhost:3000/', ensureAuthenticated, (req, res) => res.render('vehiclesurvaillance', {
   user: req.user,
 }));
 
